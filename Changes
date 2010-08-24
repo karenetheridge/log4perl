@@ -3,6 +3,12 @@
 ##################################################
 
 1.30 (not yet released)
+   *    (..) [RT 60665] Files from appenders using recreate_check_signal are
+             properly recreated on receipt of a signal, rather than just one
+             (patch provided by Karen Etheridge)
+   *    (ms) [RT 60197] Fixed uninitialized value warnings with
+             the multiline appender and provided a test case (patch provided
+             by Karen Etheridge)
    *    (ms) [rt.cpan.org #59617] Fixed system-wide threshold without appender
              thresholds. Bug reported by Dmitry Bigunyak.
    *    (ms) [rt.cpan.org #24884] Using require() instead of incomplete
