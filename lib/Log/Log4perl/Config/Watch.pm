@@ -35,7 +35,7 @@ sub new {
         $SIG{$self->{signal}} = sub { 
             print "Caught $self->{signal} signal\n" if _INTERNAL_DEBUG;
             $self->force_next_check();
-            $old_sig_handler->(@_) if $old_sig_handler;
+            $old_sig_handler->(@_) if $old_sig_handler and ref $old_sig_handler eq 'CODE';
         };
             # Reset the marker. The handler is going to modify it.
         $self->{signal_caught} = 0;
